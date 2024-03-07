@@ -57,3 +57,15 @@ class BichinhoVirtual:
 
             return 'Idade alterada com sucesso!'
         return 'Valor inválido!'
+
+    def get_nome(self) -> str:
+        return self.nome
+
+    def get_fome(self) -> str:
+        return self.fome
+
+    def get_saude(self) -> str:
+        return self.saude
+
+    def get_idade(self) -> int:
+        return self.idade
