@@ -19,6 +19,8 @@ class BichinhoVirtual:
     _lista_fomes: list = ['Muita fome', 'Com fome',
                           'Satisfeito', 'Muito satisfeito']
 
+    _lista_saude: list = ['Mal', 'Normal', 'Bem']
+
     def __init__(self, nome: str, fome: str, saude: str, idade: int) -> None:
         self.nome: str = nome
         self.fome: str = fome if fome in BichinhoVirtual._lista_fomes else 'Satisfeito'
@@ -39,4 +41,19 @@ class BichinhoVirtual:
             self.fome = fome
 
             return 'Fome alterada!'
+        return 'Valor inválido!'
+
+    def alterarSaude(self, saude: str) -> str:
+        if saude:
+            if saude in BichinhoVirtual._lista_saude:
+                self.saude = saude
+
+                return 'Saúde alterada com sucesso!'
+        return 'Saúde inválida!'
+
+    def alterarIdade(self, nova_idade: int) -> str:
+        if nova_idade > 0:
+            self.idade = nova_idade
+
+            return 'Idade alterada com sucesso!'
         return 'Valor inválido!'
