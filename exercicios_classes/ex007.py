@@ -21,10 +21,10 @@ class BichinhoVirtual:
 
     _lista_saude: list = ['Mal', 'Normal', 'Bem']
 
-    def __init__(self, nome: str, fome: str, saude: str, idade: int) -> None:
+    def __init__(self, nome: str, fome: int, saude: int, idade: int) -> None:
         self.nome: str = nome
-        self.fome: str = fome if fome in BichinhoVirtual._lista_fomes else 'Satisfeito'
-        self.saude: str = saude
+        self.fome: int = fome
+        self.saude: int = saude
         self.idade: int = idade
 
     def alterarNome(self, novo_nome: str) -> str:
@@ -36,19 +36,18 @@ class BichinhoVirtual:
             return 'Nome igual ao anterior!'
         return 'Nome inválido!'
 
-    def alterarFome(self, fome: str) -> str:
-        if fome and fome in BichinhoVirtual._lista_fomes:
+    def alterarFome(self, fome: int) -> str:
+        if fome >= 0 and fome <= 10:
             self.fome = fome
 
             return 'Fome alterada!'
         return 'Valor inválido!'
 
-    def alterarSaude(self, saude: str) -> str:
-        if saude:
-            if saude in BichinhoVirtual._lista_saude:
-                self.saude = saude
+    def alterarSaude(self, saude: int) -> str:
+        if saude >= 0 and saude <= 10:
+            self.saude = saude
 
-                return 'Saúde alterada com sucesso!'
+            return 'Saúde alterada com sucesso!'
         return 'Saúde inválida!'
 
     def alterarIdade(self, nova_idade: int) -> str:
@@ -61,10 +60,10 @@ class BichinhoVirtual:
     def get_nome(self) -> str:
         return self.nome
 
-    def get_fome(self) -> str:
+    def get_fome(self) -> int:
         return self.fome
 
-    def get_saude(self) -> str:
+    def get_saude(self) -> int:
         return self.saude
 
     def get_idade(self) -> int:
