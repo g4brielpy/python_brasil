@@ -57,6 +57,22 @@ class BichinhoVirtual:
             return 'Idade alterada com sucesso!'
         return 'Valor inválido!'
 
+    def humor(self) -> str:
+        numero_humor: int = self.saude + self.fome
+
+        if numero_humor == 0:
+            return 'Super Triste'
+        elif numero_humor >= 1 and numero_humor <= 3:
+            return 'Triste'
+        elif numero_humor >= 4 and numero_humor <= 6:
+            return 'Normal'
+        elif numero_humor >= 7 and numero_humor <= 9:
+            return 'Feliz'
+        elif numero_humor >= 10 and numero_humor <= 20:
+            return 'Super Feliz'
+        else:
+            return 'Valor inválido'
+
     def get_nome(self) -> str:
         return self.nome
 
